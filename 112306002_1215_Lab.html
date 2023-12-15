@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1215_Lab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: transparent;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button.button1 {
+            background-color: #3498db;
+        }
+
+        .button.button2 {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="result-container"></div>
+    <div class="button-container">
+        <input type="button" class="button button1" value="Button 1" onclick="showAlert('firstInput')">
+        <input type="button" class="button button2" value="Button 2" onclick="showAlert('secondInput')">
+    </div>
+    <script>
+        var firstInput, secondInput;
+        firstInput = parseInt(window.prompt("Enter the first number:"));
+        secondInput = parseInt(window.prompt("Enter the second number:"));
+
+        if (firstInput > secondInput) {
+            document.body.style.backgroundColor = 'lightblue';
+            document.writeln('<p>' + firstInput + ' > ' + secondInput + '</p>');
+        } else if (secondInput > firstInput) {
+            document.body.style.backgroundColor = 'orange';
+            document.writeln('<p>' + secondInput + ' > ' + firstInput + '</p>');
+        } else {
+            document.body.style.backgroundColor = 'lightyellow';
+            document.writeln('<p>' + secondInput + ' == ' + firstInput + '</p>');
+        }
+
+        function showAlert(inputType) {
+            if (inputType === 'firstInput') {
+                alert("First Input: " + firstInput);
+            } else {
+                alert("Second Input: " + secondInput);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
